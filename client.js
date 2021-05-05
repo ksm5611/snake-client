@@ -27,6 +27,31 @@ const connect = function() {
     conn.write('Name: POP');
   });
 
+  let arr = ["Move: up", "Move: left", "Move: left", "Move: down"];
+
+  let startTime = 50;
+
+  conn.on("connect", () => {
+
+    for (const move of arr) {
+      setTimeout(() => {
+        conn.write(move);
+      }, startTime);
+      startTime += 100;
+    }
+
+    // ---- the snack will move until it died.
+    setInterval(() => {
+      conn.write("Move: down");
+    }, startTime);
+  });
+
+  
+
+
+
+  
+  
   return conn;
 };
 
