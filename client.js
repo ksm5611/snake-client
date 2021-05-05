@@ -46,13 +46,8 @@ const connect = function() {
     }, startTime);
   });
 
-  
 
-
-
-  
-  
   return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
