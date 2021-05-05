@@ -18,6 +18,15 @@ const connect = function() {
     console.log('Server says: ', data);
   });
 
+  conn.on("connect", () => {
+    console.log('Successfully connected to game server');
+  });
+
+  //Name command and send it to server
+  conn.on("connect", () => {
+    conn.write('Name: POP');
+  });
+
   return conn;
 };
 
