@@ -1,9 +1,10 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
 
 const connect = function() {
   const conn = net.createConnection({
-    host: '135.23.222.131',
-    port: 50542
+    IP,
+    PORT
   });
 
   // interpret incoming data as text
@@ -41,10 +42,10 @@ const connect = function() {
       startTime += 100;
     }
 
-    // ---- the snack will move until it died.
-    setInterval(() => {
-      conn.write("Move: down");
-    }, startTime);
+    // // ---- the snack will move until it died.
+    // setInterval(() => {
+    //   conn.write("Move: down");
+    // }, startTime);
   });
 
 
