@@ -25,6 +25,7 @@ const connect = function() {
   //Name command and send it to server
   conn.on("connect", () => {
     conn.write('Name: POP');
+    conn.write('Say: my brain');
   });
 
   let arr = ["Move: up", "Move: left", "Move: left", "Move: down"];
